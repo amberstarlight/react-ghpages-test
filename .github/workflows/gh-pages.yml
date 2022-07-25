@@ -1,12 +1,33 @@
 name: gh-pages
 
-on: push
+on:
+  push:
+    branches:
+      - "main"
 
 jobs:
   gh-pages:
     runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        node-version: [18]
+
     steps:
-      - name: deploy with gh-pages
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build
+        run: |
+          yarn install
+          yarn build
+
+      - name: Deploy to gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
