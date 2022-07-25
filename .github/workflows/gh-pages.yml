@@ -26,6 +26,7 @@ jobs:
         run: |
           yarn install
           yarn build
+          touch ./build/.nojekyll
 
       - name: Deploy to gh-pages
         run: |
