@@ -1,6 +1,7 @@
 {
   "name": "react-ghpages-test",
   "version": "0.1.0",
+  "homepage": "https://amberstarlight.github.io/react-ghpages-test",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
