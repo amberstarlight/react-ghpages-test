@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: calc(10px + 2vmin);
 }
 
 .App-logo {
@@ -25,7 +26,17 @@
 }
 
 .App-link {
+  background: none;
+  border: 1px solid #61dafb;
+  padding: 1em 3em;
+  border-radius: 0.5em;
   color: #61dafb;
+  font-size: 1em;
+}
+
+.App-link:hover {
+  background-color: #61dafb;
+  color: #fff;
 }
 
 @keyframes App-logo-spin {
