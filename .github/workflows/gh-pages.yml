@@ -26,7 +26,8 @@ jobs:
         run: |
           yarn install
           yarn build
-          touch ./build/.nojekyll
+          cd ./build
+          cp index.html 404.html
 
       - name: Deploy to gh-pages
         run: |
